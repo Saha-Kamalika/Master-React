@@ -19,7 +19,22 @@ export default function TextForm(props) {
         event.preventDefault();
         setText('');
     };
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(text);
+            alert("Text copied to clipboard!");
+        } catch (err) {
+            console.error("Failed to copy text: ", err);
+        }
+    };
 
+    const handleExtraSpaces = (event) => {
+        event.preventDefault();
+        text.trim();
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+    };
+    
     const [text, setText] = useState("");
 
     const calculateWordCount = (text) => {
@@ -45,6 +60,8 @@ export default function TextForm(props) {
                     <button className="btn btn-outline-success my-2 my-sm-0 my-3 mx-1" onClick={handleUpClick}>Convert to UPPERCASE</button>
                     <button className="btn btn-outline-success my-2 my-sm-0 my-3 mx-1" onClick={handleLowClick}>Convert to lowercase</button>
                     <button className="btn btn-outline-success my-2 my-sm-0 my-3 mx-1" onClick={handleClearClick}>Clear Text</button>
+                    <button className="btn btn-outline-success my-2 my-sm-0 my-3 mx-1" onClick={handleCopy}>Copy Text</button>
+                    <button className="btn btn-outline-success my-2 my-sm-0 my-3 mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
                 </form>
             </div>
             <div className="container my-3">
