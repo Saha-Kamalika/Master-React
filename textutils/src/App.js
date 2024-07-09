@@ -12,7 +12,7 @@ function App() {
     if(mode==='light') document.body.style.backgroundColor='#06180b';
     else document.body.style.backgroundColor= 'white';
   };
-
+ 
   return (
     <>
       <Navbar title="Textutils" aboutText="About Textutils" mode={mode} toggleMode={toggleMode} />
