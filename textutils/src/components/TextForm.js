@@ -8,24 +8,23 @@ export default function TextForm(props) {
     const handleUpClick = (event) => {
         event.preventDefault();
         setText(text.toUpperCase());
+        props.showAlert("Converted to Uppercase","success");
     };
 
     const handleLowClick = (event) => {
         event.preventDefault();
         setText(text.toLowerCase());
+        props.showAlert("Converted to Lowercase","success");
     };
 
     const handleClearClick = (event) => {
         event.preventDefault();
         setText('');
+        props.showAlert("Text Cleared","success");
     };
-    const handleCopy = async () => {
-        try {
-            await navigator.clipboard.writeText(text);
-            alert("Text copied to clipboard!");
-        } catch (err) {
-            console.error("Failed to copy text: ", err);
-        }
+    const handleCopy = () => {
+        navigator.clipboard.writeText(text);
+        props.showAlert("Text Copied","success");
     };
 
     const handleExtraSpaces = (event) => {
@@ -33,6 +32,7 @@ export default function TextForm(props) {
         text.trim();
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert("Cleared Extra Spaces","success");
     };
     
     const [text, setText] = useState("");
