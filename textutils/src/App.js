@@ -46,15 +46,9 @@ function App() {
       <div className="container my-3">
       
       <Routes>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>
-          </Route>
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>}/>
       </Routes>
-        {/* <TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/> */}
-        {/* <About /> */}
       </div>
       </Router>
     </>
