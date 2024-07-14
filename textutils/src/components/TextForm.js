@@ -38,7 +38,7 @@ export default function TextForm(props) {
     const [text, setText] = useState("");
 
     const calculateWordCount = (text) => {
-        return text.trim() === '' ? 0 : text.split("/\s+/").length;
+        return text.trim() === '' ? 0 : text.split(" ").filter((elem)=>{return elem.length!==0}).length;
     };
 
     const calculateMinuteRead = (wordCount) => {
