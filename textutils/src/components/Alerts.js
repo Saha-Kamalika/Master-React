@@ -17,9 +17,3 @@ export default function Alerts(props) {
     );
 }
 
-Alerts.propTypes = {
-    alert: PropTypes.shape({
-        type: PropTypes.string.isRequired,
-        message: PropTypes.string.isRequired,
-    }),
-};
