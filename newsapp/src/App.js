@@ -39,7 +39,7 @@ export default class App extends Component {
           <Route path="/health">
             <News pageSize={5} country="in" category="health"/>
           </Route>
-        </Switch>
+        </Switch> 
       </div>
       </Router>
     )
