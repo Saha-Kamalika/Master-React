@@ -51,7 +51,7 @@ export class News extends Component {
   }
 
   constructUrl(page) {
-    return `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4fd59b45cd13446a896dd21098cd1937&page=${page}&pageSize=${this.props.pageSize}`;
+    return `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${page}&pageSize=${this.props.pageSize}`;
   }
 
   async componentDidMount() {
@@ -81,7 +81,7 @@ export class News extends Component {
         <div className='container my-3'>
           {<h2>NewsMonkey - Top {this.props.category.charAt(0).toUpperCase()+ this.props.category.slice(1)} Headlines</h2>}
           {this.state.loading && <Spinner />}
-          <InfiniteScroll
+          <InfiniteScroll       
             dataLength={this.state.articles.length}
             next={this.fetchMoreData}
             hasMore={this.state.articles.length != this.state.totalResults}
