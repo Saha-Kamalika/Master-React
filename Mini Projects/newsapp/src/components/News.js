@@ -34,6 +34,7 @@ const News = (props) => {
   };
 
   useEffect(() => {
+    document.title = `${props.category.charAt(0).toUpperCase() + props.category.slice(1)} - NewsMonkey`;
     updateNews();
     // eslint-disable-next-line
   }, []);
@@ -57,8 +58,8 @@ const News = (props) => {
 
   return (
     <>
-      <div className="container my-3">
-        <h2>
+      <div className="container">
+        <h2 style={{ margin: "90px 0 0 20px" }}>
           NewsMonkey - Top{" "}
           {props.category.charAt(0).toUpperCase() + props.category.slice(1)}{" "}
           Headlines
@@ -76,7 +77,9 @@ const News = (props) => {
                 <div className="col-md-4" key={elem.url}>
                   <NewsItem
                     title={elem.title ? elem.title.slice(0, 45) : ""}
-                    description={elem.description ? elem.description.slice(0, 88) : ""}
+                    description={
+                      elem.description ? elem.description.slice(0, 88) : ""
+                    }
                     imageUrl={elem.urlToImage}
                     newsUrl={elem.url}
                     author={elem.author}
