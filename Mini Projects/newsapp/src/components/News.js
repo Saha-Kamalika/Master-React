@@ -30,16 +30,20 @@ export class News extends Component {
   }
 
   async updateNews() {
+    this.props.setProgress(0);
     this.setState({ loading: true });
     let url = this.constructUrl(this.state.page);
     try {
+      this.props.setProgress(30);
       let data = await fetch(url);
       let parsedData = await data.json();
+      this.props.setProgress(70);
       this.setState({
         articles: parsedData.articles || [],
         totalResults: parsedData.totalResults || 0,
         loading: false
       });
+      this.props.setProgress(100);
     } catch (error) {
       console.error("Failed to fetch news:", error);
       this.setState({ loading: false });
