@@ -1,0 +1,7 @@
+[build]
+  base = "mini projects/newsapp"
+  publish = "mini projects/newsapp/build"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "14.17.0"
