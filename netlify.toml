@@ -1,6 +1,6 @@
 [build]
-  base = "mini projects/newsapp"
-  publish = "mini projects/newsapp/build"
+  base = "Mini projects/newsapp"
+  publish = "Mini projects/newsapp/build"
   command = "npm run build"
 
 [build.environment]
