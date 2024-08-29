@@ -14,3 +14,4 @@
 - **componentDidMount()**: Called after the components are mounted in the DOM.
 - **componentDidUpdate()**: Called after the components are updated and rendered in the DOM.
 - **componentWillUnmount()**: Called before the components are removed from the DOM.
+ 
