@@ -1,5 +1,5 @@
 # React_Course
-
+ 
 ![React Logo](https://media.geeksforgeeks.org/wp-content/uploads/20230804133715/gfg.png)
 
 ## React Component Lifecycle Stages
@@ -14,3 +14,4 @@
 - **componentDidMount()**: Called after the components are mounted in the DOM.
 - **componentDidUpdate()**: Called after the components are updated and rendered in the DOM.
 - **componentWillUnmount()**: Called before the components are removed from the DOM.
+ 
