@@ -1,0 +1,13 @@
+React: A JS library used for manipulating the UI
+npm: used for managing the packages
+bundler: used for binding up our app to shift it to production
+types of bundler: web pack, vite, parcel
+types of npm dependencies:
+ dev dependency: required for development phase
+ normal dependency: maybe used in production also
+caret (^) and tilde (~) symbols in package.json: ^ -> installs the minor upgrades in dependencies
+                                                 ~ -> installs the major upgrades in dependencies
+
+bable: transpiler or JS compiler
+        it compiles JSX into React
+
